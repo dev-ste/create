@@ -1,0 +1,16 @@
+<a href="#" class="write">Write</a>
+<script type="text/javascript" src="jquery-1.12.3.min.js"></script>
+<script>
+
+    $(document).on('click', '.write', function(event) {
+        event.preventDefault();
+        $.ajax({
+        type: 'POST',
+        url: "write.php",
+        data: {something: 'foo'},
+        success: function(result) {
+                console.log('the data was successfully sent to the server');
+            }
+        });
+    });
+</script>
